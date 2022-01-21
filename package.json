@@ -17,7 +17,10 @@
     ],
     "mac": {
       "category": "com.productivity.application",
-      "target": ["zip","dmg" ],
+      "target": [
+        "zip",
+        "dmg"
+      ],
       "icon": "build/logo512.png",
       "identity": "733067D39165CA3CC5A10F6B7067D19FD4224680",
       "darkModeSupport": true,
@@ -26,14 +29,20 @@
       "artifactName": "${productName}.${ext}"
     },
     "win": {
-      "target": ["zip", "nsis"],
+      "target": [
+        "zip",
+        "nsis"
+      ],
       "verifyUpdateCodeSignature": false
     },
     "nsis": {
       "oneClick": false
     },
     "linux": {
-      "target": ["zip","AppImage"]
+      "target": [
+        "zip",
+        "AppImage"
+      ]
     },
     "directories": {
       "buildResources": "release",
@@ -41,38 +50,38 @@
     }
   },
   "dependencies": {
-    "@craco/craco": "^6.2.0",
+    "@craco/craco": "^6.4.3",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "@fortawesome/react-fontawesome": "^0.1.15",
-    "@szhsin/react-menu": "^2.2.0",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "axios": "^0.21.1",
+    "@fortawesome/react-fontawesome": "^0.1.16",
+    "@szhsin/react-menu": "^2.3.2",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.25.0",
     "electron-is-dev": "^2.0.0",
     "electron-log": "^4.4.5",
     "electron-squirrel-startup": "^1.0.0",
     "electron-store": "^8.0.1",
     "electron-updater": "^4.6.1",
-    "i18next": "^21.6.0",
+    "i18next": "^21.6.6",
     "lodash": "^4.17.21",
     "react": "^17.0.2",
     "react-bootstrap-dropdown-menu": "^1.1.23",
-    "react-countdown-circle-timer": "^2.5.3",
-    "react-datepicker": "^4.3.0",
+    "react-countdown-circle-timer": "^3.0.6",
+    "react-datepicker": "^4.6.0",
     "react-dom": "^17.0.2",
     "react-dropdown": "^1.9.2",
-    "react-i18next": "^11.14.3",
-    "react-modal": "^3.14.3",
-    "react-multi-select-component": "^4.1.13",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
-    "react-search-autocomplete": "^5.4.2",
+    "react-i18next": "^11.15.3",
+    "react-modal": "^3.14.4",
+    "react-multi-select-component": "^4.1.15",
+    "react-router-dom": "^6.2.1",
+    "react-scripts": "5.0.0",
+    "react-search-autocomplete": "^5.4.4",
     "react-switch": "^6.0.0",
-    "realm": "^10.6.1",
+    "realm": "^10.11.0",
     "sound-play": "^1.1.0",
     "spinners-react": "^1.0.6",
     "update-electron-app": "^2.0.1",
@@ -111,8 +120,8 @@
     ]
   },
   "devDependencies": {
-    "concurrently": "^6.2.1",
-    "electron": "^13.4.0",
+    "concurrently": "^7.0.0",
+    "electron": "^16.0.7",
     "electron-builder": "^22.14.5",
     "wait-on": "^6.0.0",
     "webpack-node-externals": "^3.0.0"

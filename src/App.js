@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
-import { HashRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { HashRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 import logo from "./logo.svg";
 import "./App.css";
@@ -150,28 +150,28 @@ function App() {
       ) : (
         <Router>
           <div>
-            <Switch>
-              <Route exact path="/" component={TasksScreen} />
-              <Route path="/routines" component={RoutinesScreen} />
-              <Route path="/community" component={Community} />
-              <Route path="/study" component={StudyScreen} />
+            <Routes>
+              <Route path="/" element={<TasksScreen/>} />
+              <Route path="/routines" element={<RoutinesScreen/>} />
+              <Route path="/community" element={<Community/>} />
+              <Route path="/study" element={<StudyScreen/>} />
               <Route
                 path="/notifications-study"
-                component={NotificationsSudyCourses}
+                element={<NotificationsSudyCourses/>}
               />
               <Route
                 path="/notifications-study-course/:courseName/:courseId"
-                component={NotificationsSudy}
+                element={<NotificationsSudy/>}
               />
-              <Route path="/flash-cards" component={FlashCardsCourses} />
+              <Route path="/flash-cards" element={<FlashCardsCourses/>} />
               <Route
                 path="/flash-cards-course/:courseName/:courseId"
-                component={FlashCards}
+                element={<FlashCards/>}
               />
-              <Route path="/pomodoros" component={Pomodoros} />
-              <Route path="/exams" component={Exams} />
-              <Route path="/settings" component={Settings} />
-            </Switch>
+              <Route path="/pomodoros" element={<Pomodoros/>} />
+              <Route path="/exams" element={<Exams/>} />
+              <Route path="/settings" element={<Settings/>} />
+            </Routes>
           </div>
         </Router>
       )}
