@@ -123,7 +123,7 @@ function App() {
     ipcRenderer.on('update-message', (_, data) => {
       if (data){
         const {state, message} = data;
-        if (state === 'update-available'){
+        if (state === 'available'){
           setIsUpdating(true);
         }
         setUpdateState(message);
@@ -140,12 +140,11 @@ function App() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: 'red',
           height: '100vh'
         }}>
           <h1>Updating</h1>
           <div>
-            <h3>State: {updateState}</h3>
+            <h3>{updateState}</h3>
           </div>
         </div>
       ) : (

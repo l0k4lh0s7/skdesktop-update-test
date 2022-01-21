@@ -13,6 +13,7 @@ autoUpdater.logger.transports.file.level = 'info';
 log.info('App starting...');
 
 function sendUpdateStatusToWindow(data) {
+  log.info(data);
   const window = getWindow('main');
   window && window.webContents.send('update-message', data);
 }
@@ -46,10 +47,14 @@ autoUpdater.on('error', (err) => {
   sendUpdateStatusToWindow({state: 'error', message: 'Update Error: ' + err});
 })
 
+const bytesToMb = (bytes) => {
+  return (bytes / 1000000).toFixed(2)
+}
 autoUpdater.on('download-progress', (progressInfo) => {
-  let logMessage = 'Download speed: ' + progressInfo.bytesPerSecond;
-  logMessage = logMessage + ' - Downloaded ' + progressInfo.percent + '%';
-  logMessage = logMessage + ' (' + progressInfo.transferred + "/" + progressInfo.total + ')';
+  let logMessage = 'Download speed: ' + bytesToMb(progressInfo.bytesPerSecond) + ' MB';
+  logMessage = logMessage + ' - Downloaded ' +  (progressInfo.percent).toFixed(2) + '%';
+  logMessage = logMessage + ' (' + bytesToMb(progressInfo.transferred) + ' MB';
+  logMessage = logMessage + ' / ' + bytesToMb(progressInfo.total) + ' MB)';
   sendUpdateStatusToWindow({state: 'progress', message: logMessage});
 })
 

@@ -1,6 +1,6 @@
 {
   "name": "skdesktop",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "author": "Carlos S.",
   "description": "Skul Desktop",
   "private": true,
@@ -19,7 +19,7 @@
       "category": "com.productivity.application",
       "target": ["zip","dmg" ],
       "icon": "build/logo512.png",
-      "identity": null,
+      "identity": "733067D39165CA3CC5A10F6B7067D19FD4224680",
       "darkModeSupport": true,
       "hardenedRuntime": true,
       "gatekeeperAssess": false,
@@ -88,8 +88,8 @@
     "eject": "react-scripts eject",
     "dev": "concurrently -k \"BROWSER=none npm start\" \"npm:electron\"",
     "electron": "wait-on tcp:3000 && electron .",
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder",
+    "pack": "npm run build && electron-builder --dir",
+    "dist": "npm run build && electron-builder -p never",
     "publish": "npm run build && electron-builder --publish always"
   },
   "eslintConfig": {
